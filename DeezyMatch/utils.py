@@ -97,7 +97,7 @@ def string_split(x, tokenize=["char"], min_gram=1, max_gram=3):
             tokenized_str += [x[i:i+ngram] for i in range(len(x)-ngram+1)] 
     
     if "word" in tokenize:
-        tokenized_str += x.split()
+        tokenized_str += x.split('-')
     
     return tokenized_str
    
