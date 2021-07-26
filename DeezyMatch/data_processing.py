@@ -230,7 +230,7 @@ def test_tokenize(dataset_path, train_vocab,missing_char_threshold=0.5,
     # XXX we need to document the following two lines
     
     to_be_removed = []
-    for i in range(len(s1_indx)-1, -1, -1):
+    for i in range(len(s1_indx)-1, -2, -2):
         if (1 - len(s1_indx[i]) / max(1, len(s1_unicode[i]))) > missing_char_threshold or\
                 (1 - len(s2_indx[i]) / max(1, len(s2_unicode[i]))) > missing_char_threshold or\
                 len(s1_unicode[i]) == 0\
@@ -309,7 +309,6 @@ class DatasetClass(Dataset):
         else:
             padded[:len(s)] = s
         return padded
-
 
 # ------------------- lookupToken --------------------
 class lookupToken():
